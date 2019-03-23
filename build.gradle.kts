@@ -1,7 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.3.21" apply false
-    id("org.jlleitschuh.gradle.ktlint") version "7.2.1" apply false
-    id("com.gradle.plugin-publish") version "0.10.0" apply false
+    kotlin("jvm") version Versions.kotlin apply false
+    id("org.jlleitschuh.gradle.ktlint") version Versions.ktlintGradle apply false
 }
 
 allprojects {
@@ -11,5 +10,5 @@ allprojects {
 }
 
 tasks.withType(Wrapper::class.java).configureEach {
-    gradleVersion = "5.3"
+    gradleVersion = Versions.gradleWrapper
 }
