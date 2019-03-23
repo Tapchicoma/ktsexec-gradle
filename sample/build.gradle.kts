@@ -1,5 +1,7 @@
-plugins {
-    id("by.egorr.gradle.ktsexec") version "1.0.0-SNAPSHOT"
+buildscript {
+    dependencies {
+        classpath("by.egorr.gradle:ktsexec-task:1.0.0-SNAPSHOT")
+    }
 }
 
 repositories {

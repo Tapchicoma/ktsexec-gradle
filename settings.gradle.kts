@@ -1,4 +1,4 @@
 enableFeaturePreview("STABLE_PUBLISHING")
 
-include("plugin")
+include("task")
 include("host")
