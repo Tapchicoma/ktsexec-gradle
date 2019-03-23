@@ -1,0 +1,32 @@
+version: 2.1
+
+executors:
+  openjdk:
+    docker:
+      - image: openjdk:8u181
+
+jobs:
+  build_and_check:
+    executor: openjdk
+    steps:
+      - checkout
+      - run:
+          name: Codestyle
+          command: ./gradlew ktlintCheck
+      - run:
+          name: Assemble
+          command: ./gradlew assemble
+      - run:
+          name: Sample run
+          command: ./sample/gradlew -p ./sample/ hello
+
+workflows:
+  version: 2
+
+  pr_check:
+    jobs:
+      - build_and_check:
+          filters:
+            branches:
+              ignore:
+                - master
