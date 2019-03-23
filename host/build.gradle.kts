@@ -19,6 +19,23 @@ publishing {
         create<MavenPublication>("maven") {
             artifactId = "ktsexec-host"
             from(components["java"])
+
+            pom {
+                name.set("Kotlin script jvm host")
+                description.set("Provides Kotlin script jvm host that is used by KtsExec Gradle task")
+                url.set("https://github.com/Tapchicoma/ktsexec-gradle/blob/master/README.md")
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:https://github.com/Tapchicoma/ktsexec-gradle.git")
+                    developerConnection.set("scm:git:git@github.com:Tapchicoma/ktsexec-gradle.git")
+                    url.set("https://github.com/Tapchicoma/ktsexec-gradle/")
+                }
+            }
         }
     }
 }
