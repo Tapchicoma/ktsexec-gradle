@@ -56,7 +56,7 @@ bintray {
         vcsUrl = "https://github.com/Tapchicoma/ktsexec-gradle/"
         description = "Provides Kotlin script host to be used with KtsExec Gradle task"
         setLabels("Kotlin", "Gradle", "Kotlin script")
-        setLicenses("Apache 2.0")
+        setLicenses("Apache-2.0")
         desc = description
     })
 }
