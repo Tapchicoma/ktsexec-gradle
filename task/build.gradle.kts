@@ -54,7 +54,7 @@ bintray {
     publish = true
 
     pkg(delegateClosureOf<BintrayExtension.PackageConfig> {
-        repo = "KtsExec Gradle"
+        repo = "maven"
         name = "KtsExec Gradle task"
         vcsUrl = "https://github.com/Tapchicoma/ktsexec-gradle/"
         description = "Provides Gradle task to run Kotlin script files"
