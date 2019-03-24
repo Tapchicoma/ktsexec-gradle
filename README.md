@@ -4,6 +4,7 @@ Project provides `KtsExec` Gradle task that runs [Kotlin scripts](https://github
 
 [![CircleCI](https://circleci.com/gh/Tapchicoma/ktsexec-gradle.svg?style=svg)](https://circleci.com/gh/Tapchicoma/ktsexec-gradle)
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
+[![Download](https://api.bintray.com/packages/tapchicoma/maven/ktsexec-task/images/download.svg)](https://bintray.com/tapchicoma/maven/ktsexec-task/_latestVersion)
 
 ## Gradle usage
 
