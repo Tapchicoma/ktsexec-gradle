@@ -38,3 +38,9 @@ Check also [`sample/`](sample/) directory that provides sample Gradle project.
 
 Current version supports only simple Kotlin scripts, 
 without any advanced use-cases (like external dependencies).
+
+## Useful links
+
+- https://github.com/NikkyAI/MinimalScriptingExample - implementation inspiration repo
+- [Kotlin script KEEP](https://github.com/Kotlin/KEEP/blob/scripting/proposals/scripting-support.md)
+- [Official script examples](https://github.com/JetBrains/kotlin/tree/master/libraries/examples/scripting)
