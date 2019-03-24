@@ -34,9 +34,27 @@ jobs:
           command: ./sample/gradlew -p ./sample/ hello
       - *save_gradle_cache
 
+  publish_artifacts:
+    executor: openjdk
+    steps:
+      - checkout
+      - *restore_gradle_cache
+      - run:
+          name: Publish to Bintray
+          command: ./gradlew --no-daemon :host:bintrayUpload :task:bintrayUpload
+
 workflows:
   version: 2
 
-  pr_check:
+  common:
     jobs:
       - build_and_check
+      - publish_artifacts:
+          context: "Bintray release"
+          requires:
+            - build_and_check
+          filters:
+            branches:
+              only:
+                - master
+
