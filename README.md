@@ -11,7 +11,7 @@ Add following block to your root `build.gradle.kts`:
 ```kotlin
 buildscript {
     dependencies {
-        classpath("by.egorr.gradle:ktsexec-task:1.0.0-SNAPSHOT")
+        classpath("by.egorr.gradle:ktsexec-task:1.0.0")
     }
 }
 

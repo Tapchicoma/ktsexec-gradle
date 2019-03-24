@@ -5,6 +5,7 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
 
 const val KTS_EXEC_CONFIGURATION_NAME = "ktsExecConfiguration"
+private const val HOST_VERSION = "1.0.0"
 private const val KOTLIN_VERSION = "1.3.21"
 
 open class KtsExec : DefaultTask() {
@@ -28,7 +29,7 @@ open class KtsExec : DefaultTask() {
             )
             add(
                 KTS_EXEC_CONFIGURATION_NAME,
-                "by.egorr.gradle:ktsexec-host:1.0.0-SNAPSHOT"
+                "by.egorr.gradle:ktsexec-host:$HOST_VERSION"
             )
         }
     }
