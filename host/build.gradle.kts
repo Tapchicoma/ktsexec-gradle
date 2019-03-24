@@ -53,7 +53,6 @@ bintray {
     pkg(delegateClosureOf<BintrayExtension.PackageConfig> {
         repo = "KtsExec Script hots"
         name = "KtsExec Gradle task script host"
-        userOrg = "Tapchicoma"
         vcsUrl = "https://github.com/Tapchicoma/ktsexec-gradle/"
         description = "Provides Kotlin script host to be used with KtsExec Gradle task"
         setLabels("Kotlin", "Gradle", "Kotlin script")
