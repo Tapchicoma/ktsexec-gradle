@@ -54,7 +54,6 @@ workflows:
           requires:
             - build_and_check
           filters:
-            branches:
+            tags:
               only:
-                - master
-
+                - /v\d.\d.\d/
