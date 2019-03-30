@@ -10,5 +10,5 @@ repositories {
 
 tasks.create("hello", by.egorr.gradle.ktsexec.KtsExec::class.java) {
     group = "Scripts"
-    script = "scripts/hello.kts"
+    script.set(file("scripts/hello.kts"))
 }

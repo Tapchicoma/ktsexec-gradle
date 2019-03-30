@@ -26,9 +26,9 @@ and not as Gradle plugin.
 
 Then start adding tasks, similar to `JavaExec`:
 ```kotlin
-tasks.create("runSomScript", by.egorr.gradle.ktsexec.KtsExec::class.java) {
+tasks.create("runSomeScript", by.egorr.gradle.ktsexec.KtsExec::class.java) {
     group = "Scripts"
-    script = "scripts/awesome_script.kts"
+    script.set(file("scripts/awesome_script.kts"))
 }
 
 ```
