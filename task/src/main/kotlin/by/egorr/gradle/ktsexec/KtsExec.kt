@@ -5,7 +5,7 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
 
 const val KTS_EXEC_CONFIGURATION_NAME = "ktsExecConfiguration"
-private const val HOST_VERSION = "1.0.0"
+private const val HOST_VERSION = "1.1.0-SNAPSHOT"
 private const val KOTLIN_VERSION = "1.3.21"
 
 open class KtsExec : DefaultTask() {
