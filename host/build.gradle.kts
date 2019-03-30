@@ -8,8 +8,10 @@ plugins {
     id("com.jfrog.bintray")
 }
 
-group = "by.egorr.gradle"
-version = "1.0.0"
+val commonGroup: String by extra
+val commonVersion: String by extra
+group = commonGroup
+version = commonVersion
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host-embeddable:${Versions.kotlin}")

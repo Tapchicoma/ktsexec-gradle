@@ -8,6 +8,9 @@ allprojects {
     repositories {
         jcenter()
     }
+
+    val commonGroup by extra { "by.egorr.gradle" }
+    val commonVersion by extra { "1.1.0-SNAPSHOT" }
 }
 
 tasks.withType(Wrapper::class.java).configureEach {
