@@ -14,9 +14,9 @@ group = commonGroup
 version = commonVersion
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host-embeddable:${Versions.kotlin}")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-common:${Versions.kotlin}")
-    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:${Versions.kotlin}")
+    api("org.jetbrains.kotlin:kotlin-scripting-jvm-host-embeddable:${Versions.kotlin}")
+    api("org.jetbrains.kotlin:kotlin-scripting-common:${Versions.kotlin}")
+    api("org.jetbrains.kotlin:kotlin-scripting-jvm:${Versions.kotlin}")
 }
 
 tasks.register<Jar>("sourcesJar") {

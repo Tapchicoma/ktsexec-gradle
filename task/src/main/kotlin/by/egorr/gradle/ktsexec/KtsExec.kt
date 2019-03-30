@@ -10,7 +10,6 @@ import java.io.IOException
 
 const val KTS_EXEC_CONFIGURATION_NAME = "ktsExecConfiguration"
 private const val HOST_VERSION = "1.1.0-SNAPSHOT"
-private const val KOTLIN_VERSION = "1.3.21"
 
 @Suppress("UnstableApiUsage")
 open class KtsExec : DefaultTask() {
@@ -21,18 +20,6 @@ open class KtsExec : DefaultTask() {
     init {
         project.configurations.maybeCreate(KTS_EXEC_CONFIGURATION_NAME)
         with(project.dependencies) {
-            add(
-                KTS_EXEC_CONFIGURATION_NAME,
-                "org.jetbrains.kotlin:kotlin-scripting-jvm-host-embeddable:$KOTLIN_VERSION"
-            )
-            add(
-                KTS_EXEC_CONFIGURATION_NAME,
-                "org.jetbrains.kotlin:kotlin-scripting-jvm:$KOTLIN_VERSION"
-            )
-            add(
-                KTS_EXEC_CONFIGURATION_NAME,
-                "org.jetbrains.kotlin:kotlin-compiler-embeddable:$KOTLIN_VERSION"
-            )
             add(
                 KTS_EXEC_CONFIGURATION_NAME,
                 "by.egorr.gradle:ktsexec-host:$HOST_VERSION"
