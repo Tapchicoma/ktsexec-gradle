@@ -16,6 +16,11 @@ dependencies {
     compileOnly(kotlin("stdlib"))
 }
 
+tasks.register<Jar>("sourcesJar") {
+    from(sourceSets.main.get().allSource)
+    archiveClassifier.set("sources")
+}
+
 publishing {
     repositories {
         mavenCentral()
@@ -25,6 +30,7 @@ publishing {
         create<MavenPublication>("maven") {
             artifactId = "ktsexec-task"
             from(components["java"])
+            artifact(tasks["sourcesJar"])
 
             pom {
                 name.set("KtsExec task")

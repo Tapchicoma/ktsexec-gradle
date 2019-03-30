@@ -17,11 +17,18 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:${Versions.kotlin}")
 }
 
+
+tasks.register<Jar>("sourcesJar") {
+    from(sourceSets.main.get().allSource)
+    archiveClassifier.set("sources")
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
             artifactId = "ktsexec-host"
             from(components["java"])
+            artifact(tasks["sourcesJar"])
 
             pom {
                 name.set("Kotlin script jvm host")
