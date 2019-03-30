@@ -2,7 +2,8 @@ package by.egorr.gradle.ktsexec
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.RegularFileProperty
-import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.InputFile
+import org.gradle.api.tasks.SkipWhenEmpty
 import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.TaskExecutionException
 import java.io.IOException
@@ -13,7 +14,8 @@ private const val KOTLIN_VERSION = "1.3.21"
 
 @Suppress("UnstableApiUsage")
 open class KtsExec : DefaultTask() {
-    @field:Input
+    @get:SkipWhenEmpty
+    @get:InputFile
     val script: RegularFileProperty = project.objects.fileProperty()
 
     init {
