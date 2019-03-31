@@ -6,11 +6,33 @@ Project provides `KtsExec` Gradle task that runs [Kotlin scripts](https://github
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 [![Download](https://api.bintray.com/packages/tapchicoma/maven/ktsexec-task/images/download.svg)](https://bintray.com/tapchicoma/maven/ktsexec-task/_latestVersion)
 
-## Gradle usage
+## Gradle setup
 
-Add following block to your root `build.gradle.kts`:
+### No-op plugin
+
+You can add no-op plugin, that automatically adds `KtsExec` task type
+and does nothing more:
+```kotlin
+plugins {
+    id("by.egorr.gradle.ktsexec-plugin") version "1.0.0"
+}
+
+repositories {
+    // Required for KtsExec task dependencies
+    jcenter()
+}
+```
+
+### Adding task directly
+
+Alternatively, you can add following block to your root `build.gradle.kts`
+to get `KtsExec` task type:
 ```kotlin
 buildscript {
+    repositories {
+        jcenter()
+    }
+
     dependencies {
         classpath("by.egorr.gradle:ktsexec-task:1.0.0")
     }
@@ -21,16 +43,15 @@ repositories {
     jcenter()
 }
 ```
-**Note**: this project provides `KtsExec` task as a common dependency, 
-and not as Gradle plugin.
 
-Then start adding tasks, similar to `JavaExec`:
+## Usage
+
+Start adding tasks, similar to `JavaExec`:
 ```kotlin
 tasks.create("runSomeScript", by.egorr.gradle.ktsexec.KtsExec::class.java) {
     group = "Scripts"
     script.set(file("scripts/awesome_script.kts"))
 }
-
 ```
 
 Check also [`sample/`](sample/) directory that provides sample Gradle project.
