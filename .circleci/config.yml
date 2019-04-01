@@ -63,7 +63,7 @@ workflows:
   check:
     jobs:
       - build_and_check
-          filter:
+          filters:
             tags:
               ignore: /.*/
 
