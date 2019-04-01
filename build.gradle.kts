@@ -11,7 +11,7 @@ allprojects {
     }
 
     val commonGroup by extra { "by.egorr.gradle" }
-    val commonVersion by extra { "1.1.0-SNAPSHOT" }
+    val commonVersion by extra { "1.1.0" }
 }
 
 tasks.withType(Wrapper::class.java).configureEach {

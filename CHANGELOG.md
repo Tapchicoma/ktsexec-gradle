@@ -1,6 +1,6 @@
 # Changelog
 
-### [Unreleased]
+### [1.1.0] - 2019-04-01
   - Add missing sources jar, required by JCenter
   - Change `KtsExec` `script` param type to `RegularFileProperty` (#7)
   - Skip task execution if no `script` param was provided (#8)

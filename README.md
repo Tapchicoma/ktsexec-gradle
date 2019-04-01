@@ -14,7 +14,7 @@ You can add no-op plugin, that automatically adds `KtsExec` task type
 and does nothing more:
 ```kotlin
 plugins {
-    id("by.egorr.gradle.ktsexec-plugin") version "1.0.0"
+    id("by.egorr.gradle.ktsexec-plugin") version "1.1.0"
 }
 
 repositories {
@@ -34,7 +34,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("by.egorr.gradle:ktsexec-task:1.0.0")
+        classpath("by.egorr.gradle:ktsexec-task:1.1.0")
     }
 }
 

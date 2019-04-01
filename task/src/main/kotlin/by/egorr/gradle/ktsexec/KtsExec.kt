@@ -9,7 +9,7 @@ import org.gradle.api.tasks.TaskExecutionException
 import java.io.IOException
 
 const val KTS_EXEC_CONFIGURATION_NAME = "ktsExecConfiguration"
-private const val HOST_VERSION = "1.1.0-SNAPSHOT"
+private const val HOST_VERSION = "1.1.0"
 
 @Suppress("UnstableApiUsage")
 open class KtsExec : DefaultTask() {
