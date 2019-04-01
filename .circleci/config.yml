@@ -60,34 +60,24 @@ jobs:
 workflows:
   version: 2
 
-  pr_check:
+  check:
     jobs:
-      - build_and_check:
-          filters:
-            branches:
-              ignore: master
+      - build_and_check
+          filter:
+            tags:
+              ignore: /.*/
 
-  master:
+  release:
     jobs:
       - build_and_check:
           filters:
-            branches:
-              only: master
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
       - publish_artifacts:
           context: "Bintray release"
           requires:
             - build_and_check
-          filters:
-            tags:
-              only: /^v\d.\d.\d/
-            branches:
-              ignore: /.*/
       - publish_gradle_plugin:
           context: "Gradle plugin portal"
           requires:
             - publish_artifacts
-          filters:
-            tags:
-              only: /^v\d.\d.\d/
-            branches:
-              ignore: /.*/
