@@ -71,6 +71,8 @@ workflows:
     jobs:
       - build_and_check:
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v\d+\.\d+\.\d+$/
       - publish_artifacts:
