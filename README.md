@@ -10,8 +10,7 @@ Project provides `KtsExec` Gradle task that runs [Kotlin scripts](https://github
 
 ### No-op plugin
 
-You can add no-op plugin, that automatically adds `KtsExec` task type
-and does nothing more:
+You can add plugin, that automatically adds `KtsExec` task type:
 ```kotlin
 plugins {
     id("by.egorr.gradle.ktsexec-plugin") version "1.1.0"
@@ -51,6 +50,19 @@ Start adding tasks, similar to `JavaExec`:
 tasks.create("runSomeScript", by.egorr.gradle.ktsexec.KtsExec::class.java) {
     group = "Scripts"
     script.set(file("scripts/awesome_script.kts"))
+}
+```
+
+If you want to provide your own `@KotlinScript` definition:
+```kotlin
+tasks.create("runSomeScript", by.egorr.gradle.ktsexec.KtsExec::class.java) {
+    group = "Scripts"
+    script.set(file("scripts/awesome_script.kts"))
+    scriptDefinitionClassName.set("by.example.CustomScriptDef")
+}
+
+dependencies {
+    ktsExecConfiguration(project(":mycustomkotlinscript"))
 }
 ```
 

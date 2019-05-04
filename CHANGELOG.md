@@ -2,6 +2,7 @@
 
 ### [Unreleased]
   - Update Kotlin to `1.3.31` version
+  - Allow to provide custom `@KotlinScript` definitions (#4)
 
 ### [1.1.0] - 2019-04-01
   - Add missing sources jar, required by JCenter

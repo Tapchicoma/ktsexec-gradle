@@ -30,8 +30,10 @@ jobs:
           name: Assemble
           command: ./gradlew assemble
       - run:
-          name: Sample run
-          command: ./sample/gradlew -p ./sample/ hello
+          name: Samples run
+          command: |
+            ./sample/gradlew -p ./sample/ hello
+            ./sample/gradlew -p ./sample/ helloCustomScriptDef
       - *save_gradle_cache
 
   publish_artifacts:

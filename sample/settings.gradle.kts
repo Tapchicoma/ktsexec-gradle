@@ -4,3 +4,5 @@ includeBuild("../") {
         substitute(module("by.egorr.gradle:ktsexec-task")).with(project(":task"))
     }
 }
+
+include(":custom-script-def")
