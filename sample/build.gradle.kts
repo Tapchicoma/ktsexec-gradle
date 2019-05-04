@@ -1,6 +1,12 @@
 buildscript {
+    repositories {
+        jcenter()
+    }
+    
     dependencies {
         classpath("by.egorr.gradle:ktsexec-task:1.0.0-SNAPSHOT")
+        // Needed only in this sample project!
+        classpath("by.egorr.gradle:ktsexec-host:1.0.0-SNAPSHOT")
     }
 }
 
