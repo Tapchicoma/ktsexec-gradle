@@ -10,6 +10,7 @@ import kotlin.script.experimental.jvm.dependenciesFromCurrentContext
 import kotlin.script.experimental.jvm.jvm
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 import kotlin.script.experimental.jvmhost.createJvmCompilationConfigurationFromTemplate
+import kotlin.system.exitProcess
 
 @KotlinScript
 abstract class SimpleScript
@@ -26,17 +27,18 @@ inline fun <reified S : Any> evalFile(
 }
 
 fun main(vararg args: String) {
-    if (args.size != 1) {
+    if (args.isEmpty()) {
         println("usage: <app> <script file>")
-    } else {
-        val scriptFile = File(args[0])
-        println("Start script $scriptFile execution.")
-
-        val res = evalFile<SimpleScript>(scriptFile)
-
-        res.reports.forEach {
-            println(" : ${it.message}" + if (it.exception == null) "" else ": ${it.exception} \n ${it.exception?.printStackTrace()}")
-        }
-        println("Script $scriptFile execution done.")
+        exitProcess(-1)
     }
+
+    val scriptFile = File(args[0])
+    println("Start script $scriptFile execution.")
+
+    val res = evalFile<SimpleScript>(scriptFile)
+
+    res.reports.forEach {
+        println(" : ${it.message}" + if (it.exception == null) "" else ": ${it.exception} \n ${it.exception?.printStackTrace()}")
+    }
+    println("Script $scriptFile execution done.")
 }
