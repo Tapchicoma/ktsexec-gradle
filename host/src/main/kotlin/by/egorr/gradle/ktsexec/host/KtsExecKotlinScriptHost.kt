@@ -30,12 +30,13 @@ fun main(vararg args: String) {
         println("usage: <app> <script file>")
     } else {
         val scriptFile = File(args[0])
-        println("Executing script $scriptFile")
+        println("Start script $scriptFile execution.")
 
         val res = evalFile<SimpleScript>(scriptFile)
 
         res.reports.forEach {
             println(" : ${it.message}" + if (it.exception == null) "" else ": ${it.exception} \n ${it.exception?.printStackTrace()}")
         }
+        println("Script $scriptFile execution done.")
     }
 }
