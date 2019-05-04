@@ -2,7 +2,7 @@ buildscript {
     repositories {
         jcenter()
     }
-    
+
     dependencies {
         classpath("by.egorr.gradle:ktsexec-task:1.0.0-SNAPSHOT")
         // Needed only in this sample project!
@@ -14,8 +14,11 @@ repositories {
     jcenter()
 }
 
-tasks.create("hello", by.egorr.gradle.ktsexec.KtsExec::class.java) {
-    group = "Scripts"
+val scriptsGroup = "Scripts"
+typealias KtsExec = by.egorr.gradle.ktsexec.KtsExec
+
+tasks.create("hello", KtsExec::class.java) {
+    group = scriptsGroup
     script.set(file("scripts/hello.kts"))
 }
 
