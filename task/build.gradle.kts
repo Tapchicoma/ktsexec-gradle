@@ -16,6 +16,7 @@ version = commonVersion
 dependencies {
     compileOnly(gradleApi())
     compileOnly(kotlin("stdlib"))
+    compileOnly(project(":host"))
 }
 
 tasks.register<Jar>("sourcesJar") {
